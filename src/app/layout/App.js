@@ -9,6 +9,7 @@ import EventDetailedPage from '../../features/Event/EventDetailed/EventDetailedP
 import SettingsDasboard from '../../features/User/Settings/SettingsDasboard';
 import NavBar from '../../features/Nav/NavBar/NavBar';
 import EventForm from '../../features/Event/EventForm/EventForm';
+import TestComponent from '../../features/testarea/TestComponent';
 
 const App = () => {
 	return (
@@ -26,6 +27,7 @@ const App = () => {
 							<Route path='/profile/:id' component={UserDetailedPage} />
 							<Route path='/settings' component={SettingsDasboard} />
 							<Route path='/createEvent' component={EventForm} />
+							<Route path='/test' component={TestComponent} />
 						</Container>
 					</Fragment>
 				)}
