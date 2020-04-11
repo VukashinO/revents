@@ -10,6 +10,8 @@ class EventList extends Component {
 						key={event.id}
 						event={event}
 						handleCreateEvent={this.props.handleCreateEvent}
+						handleSelectEvent={this.props.handleSelectEvent}
+						deleteEvent={this.props.deleteEvent}
 					/>
 				))}
 			</Fragment>
