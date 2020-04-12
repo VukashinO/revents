@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import EventDashboard from '../../features/Event/EventDashboard/EventDashboard';
 import { Container } from 'semantic-ui-react';
-import { Route } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import HomePage from '../../features/Home/HomePage';
 import PeopleDashboard from '../../features/User/PeopleDashboard/PeopleDashboard';
 import UserDetailedPage from '../../features/User/UserDetailed/UserDetailedPage';
@@ -11,7 +11,7 @@ import NavBar from '../../features/Nav/NavBar/NavBar';
 import EventForm from '../../features/Event/EventForm/EventForm';
 import TestComponent from '../../features/testarea/TestComponent';
 
-const App = () => {
+const App = (props) => {
 	return (
 		<Fragment>
 			<Route exact path='/' component={HomePage} />
@@ -21,13 +21,18 @@ const App = () => {
 					<Fragment>
 						<NavBar />
 						<Container className='main'>
-							<Route path='/events' component={EventDashboard} />
-							<Route path='/events/:id' component={EventDetailedPage} />
-							<Route path='/people' component={PeopleDashboard} />
-							<Route path='/profile/:id' component={UserDetailedPage} />
-							<Route path='/settings' component={SettingsDasboard} />
-							<Route path='/createEvent' component={EventForm} />
-							<Route path='/test' component={TestComponent} />
+							<Switch key={props.location.key}>
+								<Route exact path='/events' component={EventDashboard} />
+								<Route path='/events/:id' component={EventDetailedPage} />
+								<Route path='/people' component={PeopleDashboard} />
+								<Route path='/profile/:id' component={UserDetailedPage} />
+								<Route path='/settings' component={SettingsDasboard} />
+								<Route
+									path={['/createEvent', '/manage/:id']}
+									component={EventForm}
+								/>
+								<Route path='/test' component={TestComponent} />
+							</Switch>
 						</Container>
 					</Fragment>
 				)}
@@ -36,4 +41,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default withRouter(App);
