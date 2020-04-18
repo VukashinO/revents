@@ -22,6 +22,7 @@ const initialState = {
 // 	}
 // };
 
+
 const incrementCounter = (state) => {
 	return {
 		...state,
