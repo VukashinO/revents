@@ -10,10 +10,12 @@ import SettingsDasboard from '../../features/User/Settings/SettingsDasboard';
 import NavBar from '../../features/Nav/NavBar/NavBar';
 import EventForm from '../../features/Event/EventForm/EventForm';
 import TestComponent from '../../features/testarea/TestComponent';
+import ModalManager from '../../features/modals/ModalManager';
 
 const App = (props) => {
 	return (
 		<Fragment>
+			<ModalManager />
 			<Route exact path='/' component={HomePage} />
 			<Route
 				path='/(.+)'

@@ -15,6 +15,7 @@ import {
 	hasLengthGreaterThan,
 } from 'revalidate';
 import DateInput from '../../../app/common/form/DateInput';
+import PlaceInput from '../../../app/common/form/PlaceInput';
 
 const category = [
 	{ key: 'drinks', text: 'Drinks', value: 'drinks' },
@@ -86,7 +87,7 @@ class EventForm extends Component {
 							<Header sub color='teal' content='Event Location Details' />
 							<Field
 								name='city'
-								component={TextInput}
+								component={PlaceInput}
 								placeholder='Event city'
 							/>
 							<Field
